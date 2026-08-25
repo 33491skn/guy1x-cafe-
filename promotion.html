@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>GUY1X คอฟฟี่ - โปรโมชัน</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Tahoma", sans-serif;
+    background-color: #fdf8f2;
+    color: #3b2417;
+  }
+
+  header {
+    background-color: #3b2417;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #e8b23d;
+  }
+
+  header .logo img {
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+  }
+
+  header nav a:hover {
+    color: #e8b23d;
+  }
+
+  header nav a.active {
+    color: #e8b23d;
+    font-weight: bold;
+  }
+
+  /* แบนเนอร์หลักเต็มความกว้าง */
+  .promo-hero {
+    background-color: #3b2417;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+  }
+
+  .promo-hero h1 {
+    font-size: 34px;
+    color: #e8b23d;
+    margin-bottom: 12px;
+  }
+
+  .promo-hero p {
+    font-size: 16px;
+    color: #f1e4d0;
+  }
+
+  .badge {
+    display: inline-block;
+    background-color: #e8b23d;
+    color: #3b2417;
+    font-weight: bold;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-top: 18px;
+    font-size: 14px;
+  }
+
+  /* การ์ดโปรโมชัน ใหญ่ขึ้น */
+  .promo-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .promo-card {
+    background-color: white;
+    border: 2px solid #e8d9c5;
+    color: #3b2417;
+    width: 340px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(59,36,23,0.08);
+  }
+
+  .promo-img {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+  }
+
+  .promo-card .promo-text {
+    padding: 25px;
+  }
+
+  .promo-card .tag {
+    display: inline-block;
+    background-color: #f1e4d0;
+    color: #6b4226;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  .promo-card h3 {
+    color: #6b4226;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  .promo-card p.desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #5c3a24;
+    margin-bottom: 14px;
+  }
+
+  .promo-card .valid {
+    font-size: 12px;
+    color: #a9744f;
+    border-top: 1px solid #f1e4d0;
+    padding-top: 12px;
+  }
+
+  /* ส่วนสมัครสมาชิก */
+  .member-cta {
+    background-color: #f1e4d0;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .member-cta h2 {
+    color: #6b4226;
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .member-cta p {
+    color: #5c3a24;
+    max-width: 500px;
+    margin: 0 auto 25px auto;
+    line-height: 1.7;
+  }
+
+  .btn {
+    background-color: #6b4226;
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .btn:hover {
+    background-color: #3b2417;
+  }
+
+  /* เงื่อนไขการใช้โปรโมชัน */
+  .terms {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 30px;
+  }
+
+  .terms h2 {
+    color: #6b4226;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .terms ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .terms li {
+    padding: 12px 0 12px 30px;
+    border-bottom: 1px solid #e8d9c5;
+    position: relative;
+    font-size: 14px;
+    color: #5c3a24;
+    line-height: 1.6;
+  }
+
+  .terms li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #e8b23d;
+    font-weight: bold;
+  }
+
+  footer {
+    background-color: #3b2417;
+    color: white;
+    text-align: center;
+    padding: 30px;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><img src="guy1x_logo.png" alt="GUY1X โลโก้"> GUY1X</div>
+    <nav>
+      <a href="index.html">หน้าหลัก</a>
+      <a href="menu.html">เมนู</a>
+      <a href="promotion.html" class="active">โปรโมชัน</a>
+      <a href="about.html">เกี่ยวกับเรา</a>
+    </nav>
+  </header>
+
+  <!-- แบนเนอร์หลัก -->
+  <section class="promo-hero">
+    <h1>โปรโมชันพิเศษประจำเดือน</h1>
+    <p>อัปเดตทุกเดือน อย่าลืมสะสมแต้มกับ GUY1X</p>
+    <div class="badge">🔥 ใช้สิทธิ์ได้ถึง 30 กันยายนนี้</div>
+  </section>
+
+  <!-- การ์ดโปรโมชัน -->
+  <div class="promo-box">
+    <div class="promo-card">
+      <div class="promo-img" style="background-color:#a9744f;">[ รูปโปรโมชัน ]</div>
+      <div class="promo-text">
+        <span class="tag">สมาชิกเท่านั้น</span>
+        <h3>ซื้อ 1 แถม 1</h3>
+        <p class="desc">เฉพาะสมาชิก GUY1X Card Plus เมื่อซื้อเครื่องดื่มไซซ์ M ขึ้นไป รับฟรีอีก 1 แก้วเมนูเดียวกันทันที</p>
+        <div class="valid">ใช้ได้ทุกสาขา | ไม่จำกัดจำนวนครั้งต่อวัน</div>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-img" style="background-color:#8a5a3b;">[ รูปโปรโมชัน ]</div>
+      <div class="promo-text">
+        <span class="tag">แลกแต้ม</span>
+        <h3>ลด 15 บาท/แก้ว</h3>
+        <p class="desc">เมื่อใช้แต้มสะสมครบ 350 แต้ม แลกส่วนลดได้ทุกเมนู สะสมจากทุกยอดการสั่งซื้อ</p>
+        <div class="valid">ตรวจสอบแต้มได้ที่แอป GUY1X</div>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-img" style="background-color:#5c3a24;">[ รูปโปรโมชัน ]</div>
+      <div class="promo-text">
+        <span class="tag">วันเกิด</span>
+        <h3>เดือนเกิดรับฟรี</h3>
+        <p class="desc">ท็อปปิ้งฟรีมูลค่าสูงสุด 30 บาท เมื่อแสดงบัตรประชาชนที่ตรงกับเดือนเกิด</p>
+        <div class="valid">ใช้สิทธิ์ได้ 1 ครั้งต่อเดือนเกิด</div>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-img" style="background-color:#b98552;">[ รูปโปรโมชัน ]</div>
+      <div class="promo-text">
+        <span class="tag">ช่วงเวลาพิเศษ</span>
+        <h3>แฮปปี้อาวร์ 14.00-16.00 น.</h3>
+        <p class="desc">ลดทุกเมนู 10% เฉพาะช่วงเวลาดังกล่าว เหมาะกับช่วงพักบ่ายสุดๆ</p>
+        <div class="valid">ทุกวันจันทร์-ศุกร์</div>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-img" style="background-color:#6b4226;">[ รูปโปรโมชัน ]</div>
+      <div class="promo-text">
+        <span class="tag">นักเรียน/นักศึกษา</span>
+        <h3>ลด 10% สำหรับนักเรียน</h3>
+        <p class="desc">แสดงบัตรนักเรียน/นักศึกษา รับส่วนลดทันที 10% ทุกเมนู ทุกวัน</p>
+        <div class="valid">แสดงบัตรก่อนชำระเงิน</div>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-img" style="background-color:#a9744f;">[ รูปโปรโมชัน ]</div>
+      <div class="promo-text">
+        <span class="tag">แนะนำเพื่อน</span>
+        <h3>ชวนเพื่อนรับฟรี 1 แก้ว</h3>
+        <p class="desc">ชวนเพื่อนสมัครสมาชิกใหม่ผ่านลิงก์ของคุณ รับเครื่องดื่มฟรี 1 แก้วทันทีที่เพื่อนสั่งครั้งแรก</p>
+        <div class="valid">รับสิทธิ์ผ่านแอป GUY1X เท่านั้น</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- สมัครสมาชิก -->
+  <section class="member-cta">
+    <h2>ยังไม่ได้เป็นสมาชิก?</h2>
+    <p>สมัครสมาชิก GUY1X Card วันนี้ รับสิทธิ์ส่วนลดและโปรโมชันพิเศษก่อนใคร ฟรี ไม่มีค่าธรรมเนียม</p>
+    <button class="btn">สมัครสมาชิกฟรี</button>
+  </section>
+
+  <!-- เงื่อนไขการใช้โปรโมชัน -->
+  <section class="terms">
+    <h2>เงื่อนไขการใช้โปรโมชัน</h2>
+    <ul>
+      <li>โปรโมชันแต่ละรายการไม่สามารถใช้ร่วมกันได้ เว้นแต่ระบุไว้เป็นอย่างอื่น</li>
+      <li>ขอสงวนสิทธิ์ในการเปลี่ยนแปลงเงื่อนไขโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</li>
+      <li>สิทธิ์สมาชิกใช้ได้เฉพาะบัญชีที่ลงทะเบียนกับ GUY1X เท่านั้น</li>
+      <li>ร้านขอสงวนสิทธิ์ในการตรวจสอบเอกสารยืนยันตัวตนก่อนรับสิทธิ์ทุกรายการ</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>☕ GUY1X คอฟฟี่</p>
+    <p>โทร. 1614 | เปิดทุกวัน 08.00 - 20.00 น.</p>
+  </footer>
+
+</body>
+</html>
